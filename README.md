@@ -4,6 +4,8 @@
 
 Based on instructions: https://codeburst.io/how-i-created-seo-friendly-portfolio-cv-website-and-hosted-it-on-github-d5c4da43cf2f
 
+colour palette inspitation: https://www.colourlovers.com/palette/943039/last_night
+
 ## Build Setup
 
 ``` bash
