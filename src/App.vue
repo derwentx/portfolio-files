@@ -87,14 +87,17 @@
         <div class="my-auto">
           <h2 class="mb-5">Experience</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-item d-flex flex-column flex-md-row mb-5" v-for="job in experience" :key="job.company">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Position</h3>
-              <div class="subheading mb-3">Company</div>
-              <p>Body</p>
+              <h3 class="mb-0">{{ job.position }}</h3>
+              <div class="subheading mb-3">{{ job.company }}</div>
+              <p>{{ job.description }}</p>
+              <ul>
+                <li v-for="(item, index) in job.items" :key="index">{{ item }}</li>
+              </ul>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">Dates</span>
+              <span class="text-primary">{{ job.startDate }} - {{ job.endDate }}</span>
             </div>
           </div>
           <!-- TODO: complete -->
@@ -206,6 +209,40 @@ export default {
         facebook: 'derwentx',
         linkedin: 'derwentx'
       },
+      experience: [
+        {
+          position: 'IT Infrastructure Manager',
+          company: 'Anna Chandler Design',
+          location: 'O\'Connor, WA',
+          description: '',
+          items: [
+            'Provided IT support and POS system deployment to a fleet of 4 stores',
+            'Designed, Built and Optimized a custom WooCommerce website which has vastly improved the business\' sales.',
+            'Installed and Maintained a network of security camera systems across multiple locations',
+            'Created a utility which automatically synchronizes product stock data between WooCommerce and Xero using their respective APIs',
+            'Built a custom map generator around the Xero accounting API'
+          ],
+          startDate: 'Jan. 2010',
+          endDate: 'Present'
+        },
+        {
+          position: 'Freelance IT Consultant',
+          company: 'Laserphile',
+          location: 'Melbourne, VIC',
+          description: '',
+          items: [
+            'Built a completely bespoke eCommerce system for a client with a dynamic and challenging set of requirements',
+            'Created a set of utilities which could synchronize user, product and order data between a client\'s CRM, Accounting and eCommerce databases',
+            'Learned first-hand, the importance of rigid version control, testing procedures and continuous integration practices in collaborative software development projects',
+            'Applied leadership skills to organize teams spanning multiple disciplines and timezones to deliver several projects',
+            'Gained an awareness of significance of good information security practices when aministrating web-facing applications',
+            'Took on the role of a sysadmin in an environment that was under a constant barrage of DDoS and attempted defacement attacks where I learnt pre-emptive DDoS mitigation techniques.',
+            'Performed incident response for a client whose web hosting company and backups had been taken down by an advanced attacker.'
+          ],
+          startDate: 'Jun. 2014',
+          endDate: 'Present'
+        }
+      ],
       profile_file: 'profile.jpg'
     }
   },
