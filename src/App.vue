@@ -100,7 +100,6 @@
               <span class="text-primary">{{ job.startDate }} - {{ job.endDate }}</span>
             </div>
           </div>
-          <!-- TODO: complete -->
         </div>
 
       </section>
@@ -109,15 +108,20 @@
         <div class="my-auto">
           <h2 class="mb-5">Education</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div
+            class="resume-item d-flex flex-column flex-md-row mb-5"
+            v-for="edu in education" :key="edu.qualification"
+          >
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Institution</h3>
-              <div class="subheading mb-3">Qualification</div>
-              <div>Sepcification</div>
-              <p>Body</p>
+              <h3 class="mb-0">{{ edu.institution }}</h3>
+              <div class="subheading mb-3">{{ edu.qualification }}</div>
+              <p>{{ edu.description }}</p>
+              <ul>
+                <li v-for="(point, index) in edu.points" :key="index">{{ point }}</li>
+              </ul>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">Dates</span>
+              <span class="text-primary">{{ edu.dates }}</span>
             </div>
           </div>
           <!-- TODO: complete -->
@@ -241,6 +245,17 @@ export default {
           ],
           startDate: 'Jun. 2014',
           endDate: 'Present'
+        }
+      ],
+      education: [
+        {
+          institution: 'University of Western Australia',
+          qualification: 'B.Sc. in Computer Science and Physics',
+          description: '',
+          dates: '2010 - 2013',
+          points: [
+            'Grade Point Average: 4.931'
+          ]
         }
       ],
       profile_file: 'profile.jpg'
