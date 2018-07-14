@@ -38,17 +38,17 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">Derwent
-            <!-- <span class="text-primary">McElhinney</span> -->
+          <h1 class="mb-0">{{ name.first }}
+            <span class="text-primary">{{ name.last }}</span>
           </h1>
           <div class="subheading mb-5">
-            <a href="tel:+61416160912">(+61) 416-160-912</a>
-             · <a href="mailto:derwent@laserphile.com">derwent@laserphile.com</a>
+            <a :href="phone_href">{{ contact.phone }}</a>
+             · <a :href="email_href">{{ contact.email }}</a>
           </div>
-          <p class="mb-5">Seasoned freelance software developer with 4 years of experience delivering unique and bespoke software solutions. Easy going, hard working nerd with a passion for research in information security and a strong sense of social justice. Engaged participant in the InfoSec community at various CTFs, meet-ups and conferences</p>
+          <p class="mb-5">{{ about }}</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
-              <a href="https://github.com/derwentx/">
+              <a :href="github_href">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -56,7 +56,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/derwentx">
+              <a :href="linkedin_href">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -64,7 +64,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://twitter.com/@derwentx">
+              <a :href="twitter_href">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -72,7 +72,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/derwentx">
+              <a :href="facebook_href">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -191,6 +191,21 @@ export default {
   data () {
     return {
       title: 'My Portfolio',
+      name: {
+        first: 'Derwent'
+        // , last: 'McElhinney'
+      },
+      contact: {
+        phone: '(+61) 416-160-912',
+        email: 'derwent@laserphile.com'
+      },
+      about: 'Seasoned freelance software developer with 4 years of experience delivering unique and bespoke software solutions. Easy going, hard working nerd with a passion for research in information security and a strong sense of social justice. Engaged participant in the InfoSec community at various CTFs, meet-ups and conferences',
+      social: {
+        github: 'derwentx',
+        twitter: 'derwentx',
+        facebook: 'derwentx',
+        linkedin: 'derwentx'
+      },
       profile_file: 'profile.jpg'
     }
   },
@@ -227,6 +242,24 @@ export default {
   computed: {
     profile_src: function () {
       return require('./assets/' + this.profile_file)
+    },
+    phone_href: function () {
+      return 'tel:' + this.contact.phone.replace(/[ ()-]/g, '')
+    },
+    email_href: function () {
+      return 'mailto:' + this.contact.email
+    },
+    github_href: function () {
+      return 'https://github.com/' + this.socials.github
+    },
+    linkedin_href: function () {
+      return 'https://www.linkedin.com/in/' + this.socials.linkedin
+    },
+    twitter_href: function () {
+      return 'https://twitter.com/@' + this.socials.twitter
+    },
+    facebook_href: function () {
+      return 'https://www.facebook.com/' + this.socials.facebook
     }
   }
 }
