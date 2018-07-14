@@ -200,7 +200,7 @@ export default {
         email: 'derwent@laserphile.com'
       },
       about: 'Seasoned freelance software developer with 4 years of experience delivering unique and bespoke software solutions. Easy going, hard working nerd with a passion for research in information security and a strong sense of social justice. Engaged participant in the InfoSec community at various CTFs, meet-ups and conferences',
-      social: {
+      socials: {
         github: 'derwentx',
         twitter: 'derwentx',
         facebook: 'derwentx',
