@@ -11,6 +11,7 @@ require('jquery.easing')
 require('bootstrap/dist/css/bootstrap.css')
 require('./assets/resume.css')
 require('devicons/css/devicons.css')
+require('devicon-2.2/devicon.css')
 require('font-awesome/css/font-awesome.css')
 
 Vue.prototype.jquery = jquery

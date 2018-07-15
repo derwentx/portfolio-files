@@ -124,7 +124,6 @@
               <span class="text-primary">{{ edu.dates }}</span>
             </div>
           </div>
-          <!-- TODO: complete -->
         </div>
       </section>
 
@@ -132,38 +131,88 @@
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
 
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <div class="subheading mb-3">Programming Languages</div>
           <ul class="list-inline list-icons">
             <li class="list-inline-item">
-              <i class="devicons devicons-html5"></i>
+              <i class="devicon-python-plain"></i> <!-- -wordmark -->
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-css3"></i>
+              <i class="devicon-c-plain"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-javascript"></i>
+              <i class="devicon-cplusplus-plain"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-jquery"></i>
+              <i class="devicon-php-plain"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"></i>
+              <i class="devicon-javascript-plain"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
+              <i class="devicon-java-plain"></i> <!-- -wordmark -->
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
+              <i class="devicon-ruby-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-clojure"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-haskell"></i> <!-- -wordmark -->
             </li>
             <!-- TODO: complete -->
           </ul>
+          <div class="subheading mb-3">Web Technologies</div>
+          <ul class="list-inline list-icons">
+            <li class="list-inline-item">
+              <i class="devicon-html5-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-css3-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-bootstrap-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-jquery-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-wordpress-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-nodejs-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-vuejs-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-apache-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-mysql-plain"></i> <!-- -wordmark -->
+            </li>
+          </ul>
 
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              List items</li>
-            <!-- TODO: complete -->
+          <div class="subheading mb-3">Tools & Workflow</div>
+          <ul class="list-inline list-icons">
+            <li class="list-inline-item">
+              <i class="devicon-travis-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-git-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-atom-original"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicon-vim-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-docker"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicons-google-cloud-platform"></i> <!-- -wordmark -->
+            </li>
           </ul>
         </div>
       </section>
