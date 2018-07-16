@@ -20,6 +20,7 @@
     "jquery": "^3.3.1",
     "jquery.easing": "^1.4.1",
     "popper.js": "^1.14.3",
+    "prerender-spa-plugin": "^3.2.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {

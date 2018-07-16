@@ -8,11 +8,11 @@ import jquery from 'jquery'
 require('bootstrap')
 require('jquery.easing')
 
+require('./assets/resume.css')
 require('../node_modules/bootstrap/dist/css/bootstrap.css')
 require('../node_modules/devicons/css/devicons.css')
 require('../node_modules/devicon-2.2/devicon.css')
 require('../node_modules/font-awesome/css/font-awesome.css')
-require('./assets/resume.css')
 
 Vue.prototype.jquery = jquery
 Vue.config.productionTip = false
