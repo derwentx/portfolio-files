@@ -225,8 +225,20 @@
           <h2 class="mb-5">Interests</h2>
           <p>In my spare time I play drums for <a href="https://www.facebook.com/theanxioustype">two</a> <a href="https://www.facebook.com/shaebirdwonders/">bands</a> and make experimental electronic music using algorithmic composition. Writing music in high level languages like Supercollider, Haskell and Clojure/Overtone is a nice way to take a break from work. Most aspects of my life revolve around code in some way.</p>
           <p>For most of my life, Python has been my native tongue, and I feel very much at home in a command line. I've used Python in countless open source projects ranging from small utilities and web scrapers to automate my workflow; to ambitious collaborative art projects for festivals. My friends and I have worked on several novel electronics engineering projects which we have written about in <a href="http://blog.laserphile.com/">our blog</a>.</p>
-
-          <div class="subheading mb-3">Projects</div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5" v-for="interest in interests" :key="interest.title">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">{{ interest.title }}</h3>
+              <p>{{ interest.description }}</p>
+              <ul>
+                <li v-for="(item, index) in interest.items" :key="index">
+                  <strong>{{ item.strong }}</strong>
+                  <span v-for="(sub_item, sub_index) in item.sub_items" :key="sub_index">
+                    &middot; <span>{{ sub_item }}</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
 
         </div>
       </section>
@@ -244,7 +256,7 @@
             <div class="resume-content mr-auto col-md-7">
               <h3 class="mb-0">{{ project.title }}</h3>
               <div class="subheading mb-3">{{ project.role }}</div>
-              <p>{{ project.description }}</p>
+              <p class="mb-0">{{ project.description }}</p>
               <ul>
                 <li v-for="(link, index) in project.links" :key="index">
                   <a :href="link.url">{{ link.text }}</a>
@@ -337,7 +349,7 @@ export default {
           ]
         },
         {
-          title: 'Moonbuggy [WIP]',
+          title: 'Moonbuggy',
           description: 'Programmed the Arduino firmware for an electric vehicle art project',
           image: 'project-moonbuggy.png',
           links: [
@@ -360,6 +372,35 @@ export default {
           image: 'project-darp.png',
           links: [
             {text: 'Project on GitHub', url: 'https://github.com/derwentx/darp'}
+          ]
+        }
+      ],
+      interests: [
+        {
+          title: 'Conferences / Workshops',
+          description: 'During my time as a freelancer, I\'ve attented numerous conferences (at my own expense) because I love being at the forefront of research in the computer science and information security community. I watch the talks that come out of CCC, Black Hat and DEF CON religeously. Here are some of the recent conferences and workshops I\'ve been a part of:',
+          items: [
+            {strong: 'Platypus', sub_items: ['Ran a workshop on bypassing IoT security using UART, 2017']},
+            {strong: 'Ruxcon', sub_items: ['Melbourne, 2017']},
+            {strong: 'WAHCKon', sub_items: ['Perth, 2015 - 2016']},
+            {strong: 'PyCon', sub_items: ['Melbourne, 2017']},
+            {strong: 'Compose', sub_items: ['Melbourne, 2017 - 2018']},
+            {strong: 'PlatypusCamp', sub_items: ['Sydney, 2017']},
+            {strong: 'BuzzConf', sub_items: ['Melbourne, 2016 - 2017']},
+            {strong: 'WooConf', sub_items: ['San Francisco, 2014']}
+          ]
+        },
+        {
+          title: 'Wargames / CTFs / Hackathons',
+          description: 'I started hacking with Kali Linux (or Backtrack as it was called then) in my teenage years on discarded computer hardware that I would find and repair. More recently I\'ve been pursuing my passion in Infosec by competing in various capture the flag competitions, hackathons and wargame exercises.',
+          items: [
+            {strong: 'PentesterLab Pro', sub_items: ['Essential', 'White']},
+            {strong: 'RuxCon CTF', sub_items: ['2017']},
+            {strong: 'PlatypusCamp CTF', sub_items: ['Android Internals']},
+            {strong: 'PyCon Hackathon', sub_items: ['ESP32 Toolchain']},
+            {strong: 'ExploitExercises', sub_items: ['Nebula', 'Protostar']},
+            {strong: 'VulnHub', sub_items: ['Mr Robot']},
+            {strong: 'OverTheWire', sub_items: ['Bandit', 'Leviathan', 'Natas', 'Krypton']}
           ]
         }
       ],
