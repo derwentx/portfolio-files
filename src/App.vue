@@ -233,7 +233,7 @@
                 <li v-for="(item, index) in interest.items" :key="index">
                   <strong>{{ item.strong }}</strong>
                   <span v-for="(sub_item, sub_index) in item.sub_items" :key="sub_index">
-                    &middot; <span>{{ sub_item }}</span>
+                  <span>  &middot; {{ sub_item }}</span>
                   </span>
                 </li>
               </ul>
