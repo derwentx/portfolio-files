@@ -4,7 +4,7 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" :src="profile_src" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" :src="require_asset(profile_file)" alt="">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,10 @@
             <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://blog.laserphile.com/">Blog</a>
           </li>
         </ul>
       </div>
@@ -220,21 +223,35 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>In my spare time I play drums for two bands and make experimental electronic music using algorithmic composition. Writing music in high level languages like Supercollider, Haskell and Clojure/Overtone is a nice way to take a break from work. Most aspects of my life revolve around code in some way.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
+          <p>In my spare time I play drums for <a href="https://www.facebook.com/theanxioustype">two</a> <a href="https://www.facebook.com/shaebirdwonders/">bands</a> and make experimental electronic music using algorithmic composition. Writing music in high level languages like Supercollider, Haskell and Clojure/Overtone is a nice way to take a break from work. Most aspects of my life revolve around code in some way.</p>
+          <p>For most of my life, Python has been my native tongue, and I feel very much at home in a command line. I've used Python in countless open source projects ranging from small utilities and web scrapers to automate my workflow; to ambitious collaborative art projects for festivals. My friends and I have worked on several novel electronics engineering projects which we have written about in <a href="http://blog.laserphile.com/">our blog</a>.</p>
+
+          <div class="subheading mb-3">Projects</div>
+
         </div>
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
         <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              thing</li>
-            <!-- TODO: complete -->
-          </ul>
+          <h2 class="mb-5">Projects</h2>
+          <div
+            class="resume-item d-flex flex-column flex-md-row mb-5"
+            v-for="project in projects" :key="project.title"
+          >
+            <div class="col-md-5">
+              <img class="img-fluid rounded mb-3 mb-md-0"  :src="require_asset(project.image)" width="320px">
+            </div>
+            <div class="resume-content mr-auto col-md-7">
+              <h3 class="mb-0">{{ project.title }}</h3>
+              <div class="subheading mb-3">{{ project.role }}</div>
+              <p>{{ project.description }}</p>
+              <ul>
+                <li v-for="(link, index) in project.links" :key="index">
+                  <a :href="link.url">{{ link.text }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -307,6 +324,45 @@ export default {
           ]
         }
       ],
+      projects: [
+        {
+          title: 'TeleCortex',
+          role: 'Protocol, firmware and controller software',
+          description: 'Designed and implemented a custom serial protocol, client and server for synchronously transmitting pixel data to multiple microcontrollers as part of an interactive geodesic LED dome art project.',
+          image: 'project-telecortex-inside-dome.gif',
+          links: [
+            {text: 'Blog posts', url: 'http://blog.laserphile.com/search/label/Cortex'},
+            {text: 'Arduino Firmware on GitHub', url: 'https://github.com/Laserphile/TeleCortex'},
+            {text: 'Python controller on GitHub', url: 'https://github.com/Laserphile/Python-TeleCortex'}
+          ]
+        },
+        {
+          title: 'Moonbuggy [WIP]',
+          description: 'Programmed the Arduino firmware for an electric vehicle art project',
+          image: 'project-moonbuggy.png',
+          links: [
+            {text: 'Project on GitHub', url: 'https://github.com/derwentx/Moonbuggy-Controller'}
+          ]
+        },
+        {
+          title: 'Modified 3D Printer',
+          description: 'Designed custom components and firmware for a specialized 3d printer that could simultaneously print multiple materials',
+          image: 'project-3d-printer.jpg',
+          links: [
+            {text: 'Blog Posts', url: 'http://blog.laserphile.com/search/label/3d%20printing'},
+            {text: 'Firmware on GitHub', url: 'https://github.com/derwentx/Marlin-Laserphile'},
+            {text: 'Open SCAD files on GitHub', url: 'https://github.com/derwentx/hydra-bits'}
+          ]
+        },
+        {
+          title: 'DARP',
+          description: 'Wrote a tool which generates alerts when a devices enters or leaves a network by analysing ARP packets.',
+          image: 'project-darp.png',
+          links: [
+            {text: 'Project on GitHub', url: 'https://github.com/derwentx/darp'}
+          ]
+        }
+      ],
       profile_file: 'profile.jpg'
     }
   },
@@ -340,10 +396,14 @@ export default {
       })
     }) // End of use strict
   },
+  methods: {
+    require_asset: function (file) {
+      if (file) {
+        return require('./assets/' + file)
+      }
+    }
+  },
   computed: {
-    profile_src: function () {
-      return require('./assets/' + this.profile_file)
-    },
     phone_href: function () {
       return 'tel:' + this.contact.phone.replace(/[ ()-]/g, '')
     },
