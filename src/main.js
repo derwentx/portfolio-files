@@ -4,6 +4,7 @@
 import Vue from 'vue'
 import App from './App'
 import jquery from 'jquery'
+import VueAnalytics from 'vue-analytics'
 
 require('bootstrap')
 require('jquery.easing')
@@ -16,6 +17,10 @@ require('../node_modules/font-awesome/css/font-awesome.css')
 
 Vue.prototype.jquery = jquery
 Vue.config.productionTip = false
+
+Vue.use(VueAnalytics, {
+  id: 'UA-56330781-2'
+})
 
 /* eslint-disable no-new */
 new Vue({
