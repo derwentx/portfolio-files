@@ -259,6 +259,10 @@
             <div class="resume-content mr-auto col-md-7">
               <h3 class="mb-0">{{ project.title }}</h3>
               <div class="subheading mb-3">{{ project.role }}</div>
+              <ul class="list-unstyled">
+                <li v-for="(badge, index) in project.badges" :key="index" v-html="badge.html"></li>
+              </ul>
+
               <p class="mb-0" v-html="project.description"></p>
               <ul>
                 <li v-for="(link, index) in project.links" :key="index">
@@ -367,6 +371,17 @@ export default {
             {text: 'Blog Posts', url: 'http://blog.laserphile.com/search/label/3d%20printing'},
             {text: 'Firmware on GitHub', url: 'https://github.com/derwentx/Marlin-Laserphile'},
             {text: 'Open SCAD files on GitHub', url: 'https://github.com/derwentx/hydra-bits'}
+          ]
+        },
+        {
+          title: 'Xero Map Generator',
+          description: 'Generates a Google MyMaps import file from filtered contacts pulled using the Xero API',
+          image: 'project-xmg.png',
+          links: [
+            {text: 'Project on GitHub', url: 'https://github.com/derwentx/Xero-Map-Generator'}
+          ],
+          badges: [
+            {html: '<a href="https://codeclimate.com/github/derwentx/Xero-Map-Generator/maintainability"><img src="https://api.codeclimate.com/v1/badges/8fde8d3562484457ae4b/maintainability" /></a>'}
           ]
         },
         {
