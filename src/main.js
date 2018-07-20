@@ -19,7 +19,11 @@ Vue.prototype.jquery = jquery
 Vue.config.productionTip = false
 
 Vue.use(VueAnalytics, {
-  id: 'UA-56330781-2'
+  id: 'UA-56330781-2',
+  checkDuplicatedScript: true,
+  autoTracking: {
+    screenview: true
+  }
 })
 
 /* eslint-disable no-new */
