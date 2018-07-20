@@ -23,7 +23,8 @@
     "prerender-spa-plugin": "^3.2.1",
     "shell-quote": "^1.6.1",
     "vue": "^2.5.2",
-    "vue-analytics": "^5.12.2"
+    "vue-analytics": "^5.12.2",
+    "vue-ua": "^1.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

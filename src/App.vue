@@ -2,7 +2,7 @@
   <div id="app" class="main-wrapper">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-block d-lg-none">Menu</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" :src="require_asset(profile_file)" alt="">
         </span>
@@ -303,9 +303,9 @@ export default {
           description: '',
           items: [
             'Provided IT support and POS system deployment to a fleet of 4 stores',
-            'Designed, Built and Optimized a custom WooCommerce website which has vastly improved the business\' sales.',
+            'Designed, Built and Optimised a custom WooCommerce website which has vastly improved the business\' sales.',
             'Installed and Maintained a network of security camera systems across multiple locations',
-            'Created a utility which automatically synchronizes product stock data between WooCommerce and Xero using their respective APIs',
+            'Created a utility which automatically synchronises product stock data between WooCommerce and Xero using their respective APIs',
             'Built a custom map generator around the Xero accounting API'
           ],
           startDate: 'Jan. 2010',
@@ -318,10 +318,10 @@ export default {
           description: '',
           items: [
             'Built a completely bespoke eCommerce system for a client with a dynamic and challenging set of requirements',
-            'Created a set of utilities which could synchronize user, product and order data between a client\'s CRM, Accounting and eCommerce databases',
+            'Created a set of utilities which could synchronise user, product and order data between a client\'s CRM, Accounting and eCommerce databases',
             'Learned first-hand, the importance of rigid version control, testing procedures and continuous integration practices in collaborative software development projects',
-            'Applied leadership skills to organize teams spanning multiple disciplines and timezones to deliver several projects',
-            'Gained an awareness of significance of good information security practices when aministrating web-facing applications',
+            'Applied leadership skills to organise teams spanning multiple disciplines and timezones to deliver several projects',
+            'Gained an awareness of significance of good information security practices when administrating web-facing applications',
             'Took on the role of a sysadmin in an environment that was under a constant barrage of DDoS and attempted defacement attacks where I learnt pre-emptive DDoS mitigation techniques.',
             'Performed incident response for a client whose web hosting company and backups had been taken down by an advanced attacker.'
           ],
@@ -362,7 +362,7 @@ export default {
         },
         {
           title: 'Modified 3D Printer',
-          description: 'Designed custom components and firmware for a specialized 3d printer that could simultaneously print multiple materials in collaboration with Matt Callaghan',
+          description: 'Designed custom components and firmware for a specialised 3d printer that could simultaneously print multiple materials in collaboration with Matt Callaghan',
           image: 'project-3d-printer.jpg',
           links: [
             {text: 'Blog Posts', url: 'http://blog.laserphile.com/search/label/3d%20printing'},
@@ -404,7 +404,7 @@ export default {
       interests: [
         {
           title: 'Conferences / Workshops',
-          description: 'During my time as a freelancer, I\'ve attented numerous conferences (at my own expense) because I love being at the forefront of research in the computer science and information security community. I watch the talks that come out of CCC, Black Hat and DEF CON religeously. Here are some of the recent conferences and workshops I\'ve been a part of:',
+          description: 'During my time as a freelancer, I\'ve attended numerous conferences (at my own expense) because I love being at the forefront of research in the computer science and information security community. I watch the talks that come out of CCC, Black Hat and DEF CON religiously. Here are some of the recent conferences and workshops I\'ve been a part of:',
           items: [
             {strong: 'Platypus', sub_items: ['Ran a workshop on bypassing IoT security using UART, 2017']},
             {strong: 'Ruxcon', sub_items: ['Melbourne, 2017']},
@@ -418,7 +418,7 @@ export default {
         },
         {
           title: 'Wargames / CTFs / Hackathons',
-          description: 'I started hacking with Kali Linux (or Backtrack as it was called then) in my teenage years on discarded computer hardware that I would find and repair. More recently I\'ve been pursuing my passion in Infosec by competing in various capture the flag competitions, hackathons and wargame exercises.',
+          description: 'I started hacking with Kali Linux (or Backtrack as it was called then) in my teenage years on discarded computer hardware that I would find and repair. More recently I\'ve been pursuing my passion in Infosec by competing in various capture the flag competitions, hackathons and war-game exercises.',
           items: [
             {strong: 'PentesterLab Pro', sub_items: ['Essential', 'Unix', 'White', 'Intercept', 'Serialize']},
             {strong: 'RuxCon CTF', sub_items: ['2017']},
@@ -461,6 +461,8 @@ export default {
       $('body').scrollspy({
         target: '#sideNav'
       })
+
+      this.$ua.trackView({routeName: '/'})
     }) // End of use strict
   },
   methods: {

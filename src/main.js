@@ -4,7 +4,9 @@
 import Vue from 'vue'
 import App from './App'
 import jquery from 'jquery'
-import VueAnalytics from 'vue-analytics'
+import VueAnalytics from 'vue-ua'
+
+import version from '../package.json'
 
 require('bootstrap')
 require('jquery.easing')
@@ -19,12 +21,17 @@ Vue.prototype.jquery = jquery
 Vue.config.productionTip = false
 
 Vue.use(VueAnalytics, {
-  id: 'UA-56330781-2',
-  checkDuplicatedScript: true,
-  autoTracking: {
-    screenview: true
-  }
+  appName: 'Portfolio',
+  appVersion: version,
+  trackingId: 'UA-56330781-2',
+  debug: true
+  // checkDuplicatedScript: true,
+  // autoTracking: {
+  //   screenview: true
+  // }
 })
+
+// Vue.analytics.trackView('routeName': '/')
 
 /* eslint-disable no-new */
 new Vue({
