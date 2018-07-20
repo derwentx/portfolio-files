@@ -44,12 +44,9 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">{{ name.first }}
-            <span class="text-primary">{{ name.last }}</span>
-          </h1>
+          <h1 class="mb-0">{{ name.first }} <span class="text-primary">{{ name.last }}</span></h1>
           <div class="subheading mb-5">
-            <a :href="phone_href">{{ contact.phone }}</a>
-             · <a :href="email_href">{{ contact.email }}</a>
+            <a :href="phone_href">{{ contact.phone }}</a> · <a :href="email_href">{{ contact.email }}</a>
           </div>
           <p class="mb-5">{{ about }}</p>
           <ul class="list-inline list-social-icons mb-0">
