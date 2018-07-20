@@ -1,5 +1,7 @@
 'use strict'
 const path = require('path')
+const pathExists = require('path-exists')
+const shellQuote = require('shell-quote').quote
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -126,10 +128,28 @@ const webpackConfig = merge(baseWebpackConfig, {
       staticDir: path.join(__dirname, '../dist' ),
       // List of endpoints you wish to prerender
       routes: [ '/' ],
-    }),
-
+    })
   ]
 })
+
+if (config.build.postBuildOut && pathExists(config.build.postBuildOut)) {
+  webpackConfig.plugins.push(new WebpackShellPlugin({
+    onBuildEnd: [
+      [
+          'rsync',
+          '-r',
+          '--exclude .*',
+          // '--verbose',
+          // '--dry-run',
+          ''
+      ].join(' ') +
+      shellQuote([
+        path.join(__dirname, '../dist/' ),
+        config.build.postBuildOut,
+      ])
+    ]
+  }))
+}
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
