@@ -33,6 +33,9 @@
           <li class="nav-item">
             <a class="nav-link" href="http://blog.laserphile.com/">Blog</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/derwentx/portfolio-files">Source Code</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -228,7 +231,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5" v-for="interest in interests" :key="interest.title">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">{{ interest.title }}</h3>
-              <p>{{ interest.description }}</p>
+              <p v-html="interest.description"></p>
               <ul>
                 <li v-for="(item, index) in interest.items" :key="index">
                   <strong>{{ item.strong }}</strong>
@@ -256,7 +259,7 @@
             <div class="resume-content mr-auto col-md-7">
               <h3 class="mb-0">{{ project.title }}</h3>
               <div class="subheading mb-3">{{ project.role }}</div>
-              <p class="mb-0">{{ project.description }}</p>
+              <p class="mb-0" v-html="project.description"></p>
               <ul>
                 <li v-for="(link, index) in project.links" :key="index">
                   <a :href="link.url">{{ link.text }}</a>
@@ -340,7 +343,7 @@ export default {
         {
           title: 'TeleCortex',
           role: 'Protocol, firmware and controller software',
-          description: 'Designed and implemented a custom serial protocol, client and server for synchronously transmitting pixel data to multiple microcontrollers as part of an interactive geodesic LED dome art project.',
+          description: 'Designed and implemented a custom serial protocol, client and server for synchronously transmitting pixel data to multiple microcontrollers as part of an interactive geodesic LED dome art project in collaboration with <a href="https://github.com/laserphile/">laserphile</a>.',
           image: 'project-telecortex-inside-dome.gif',
           links: [
             {text: 'Blog posts', url: 'http://blog.laserphile.com/search/label/Cortex'},
@@ -350,7 +353,7 @@ export default {
         },
         {
           title: 'Moonbuggy',
-          description: 'Programmed the Arduino firmware for an electric vehicle art project',
+          description: 'Programmed the Arduino firmware for an electric vehicle art project in collaboration with Matt Callaghan',
           image: 'project-moonbuggy.png',
           links: [
             {text: 'Project on GitHub', url: 'https://github.com/derwentx/Moonbuggy-Controller'}
@@ -358,7 +361,7 @@ export default {
         },
         {
           title: 'Modified 3D Printer',
-          description: 'Designed custom components and firmware for a specialized 3d printer that could simultaneously print multiple materials',
+          description: 'Designed custom components and firmware for a specialized 3d printer that could simultaneously print multiple materials in collaboration with Matt Callaghan',
           image: 'project-3d-printer.jpg',
           links: [
             {text: 'Blog Posts', url: 'http://blog.laserphile.com/search/label/3d%20printing'},
@@ -394,7 +397,7 @@ export default {
           title: 'Wargames / CTFs / Hackathons',
           description: 'I started hacking with Kali Linux (or Backtrack as it was called then) in my teenage years on discarded computer hardware that I would find and repair. More recently I\'ve been pursuing my passion in Infosec by competing in various capture the flag competitions, hackathons and wargame exercises.',
           items: [
-            {strong: 'PentesterLab Pro', sub_items: ['Essential', 'White']},
+            {strong: 'PentesterLab Pro', sub_items: ['Essential', 'Unix', 'White', 'Intercept', 'Serialize']},
             {strong: 'RuxCon CTF', sub_items: ['2017']},
             {strong: 'PlatypusCamp CTF', sub_items: ['Android Internals']},
             {strong: 'PyCon Hackathon', sub_items: ['ESP32 Toolchain']},
