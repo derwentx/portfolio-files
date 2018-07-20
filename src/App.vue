@@ -387,6 +387,9 @@ export default {
           image: 'project-darp.png',
           links: [
             {text: 'Project on GitHub', url: 'https://github.com/derwentx/darp'}
+          ],
+          badges: [
+            {html: '<a href="https://codeclimate.com/github/derwentx/darp/maintainability"><img src="https://api.codeclimate.com/v1/badges/175d55688e3ab176b4a9/maintainability" /></a>'}
           ]
         },
         {
@@ -398,6 +401,17 @@ export default {
           ],
           badges: [
             {html: '<a href="https://codeclimate.com/github/derwentx/gpm-cache/maintainability"><img src="https://api.codeclimate.com/v1/badges/f28cbc664d9193b330b3/maintainability" /></a>'}
+          ]
+        },
+        {
+          title: 'Feature Hunter',
+          description: 'Wrote a crawler send email alerts about update website content details.',
+          image: 'project-feature-hunter.png',
+          links: [
+            {text: 'Project on GitHub', url: 'https://github.com/derwentx/feature-hunter'}
+          ],
+          badges: [
+            {html: '<a href="https://codeclimate.com/github/derwentx/feature-hunter/maintainability"><img src="https://api.codeclimate.com/v1/badges/6d9a7038a57ee928ca27/maintainability" /></a>'}
           ]
         }
       ],
