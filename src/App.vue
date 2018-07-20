@@ -231,9 +231,9 @@
               <p v-html="interest.description"></p>
               <ul>
                 <li v-for="(item, index) in interest.items" :key="index">
-                  <strong>{{ item.strong }}</strong>
+                  <strong v-html="item.strong"></strong>
                   <span v-for="(sub_item, sub_index) in item.sub_items" :key="sub_index">
-                  <span>  &middot; {{ sub_item }}</span>
+                  <span>  &middot; </span><span v-html="sub_item"></span>
                   </span>
                 </li>
               </ul>
@@ -405,7 +405,7 @@ export default {
         },
         {
           title: 'Feature Hunter',
-          description: 'Wrote a crawler send email alerts about update website content details.',
+          description: 'Wrote a crawler which sends detailed email alerts about updated website content.',
           image: 'project-feature-hunter.png',
           links: [
             {text: 'Project on GitHub', url: 'https://github.com/derwentx/feature-hunter'}
@@ -420,7 +420,7 @@ export default {
           title: 'Conferences / Workshops',
           description: 'During my time as a freelancer, I\'ve attended numerous conferences (at my own expense) because I love being at the forefront of research in the computer science and information security community. I watch the talks that come out of CCC, Black Hat and DEF CON religiously. Here are some of the recent conferences and workshops I\'ve been a part of:',
           items: [
-            {strong: 'Platypus', sub_items: ['Ran a workshop on bypassing IoT security using UART, 2017']},
+            {strong: 'Platypus', sub_items: ['Ran a <a href="http://blog.laserphile.com/2017/10/platypus-hardware-hacking-101-finding.html">workshop on bypassing IoT security using UART</a>, 2017']},
             {strong: 'Ruxcon', sub_items: ['Melbourne, 2017']},
             {strong: 'WAHCKon', sub_items: ['Perth, 2015 - 2016']},
             {strong: 'PyCon', sub_items: ['Melbourne, 2017']},
