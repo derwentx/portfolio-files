@@ -391,6 +391,17 @@ export default {
           links: [
             {text: 'Project on GitHub', url: 'https://github.com/derwentx/darp'}
           ]
+        },
+        {
+          title: 'GPM Cache',
+          description: 'Wrote a script to locally cache files from a playlist in Google Play Music for you to enjoy offline',
+          image: 'project-gpm-cache.png',
+          links: [
+            {text: 'Project on GitHub', url: 'https://github.com/derwentx/gpm-cache'}
+          ],
+          badges: [
+            {html: '<a href="https://codeclimate.com/github/derwentx/gpm-cache/maintainability"><img src="https://api.codeclimate.com/v1/badges/f28cbc664d9193b330b3/maintainability" /></a>'}
+          ]
         }
       ],
       interests: [
