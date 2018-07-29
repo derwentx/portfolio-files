@@ -152,16 +152,19 @@
               <i class="devicon-javascript-plain"></i>
             </li>
             <li class="list-inline-item">
+              <i class="devicon-go-plain"></i> <!-- -wordmark -->
+            </li>
+            <li class="list-inline-item">
               <i class="devicon-java-plain"></i> <!-- -wordmark -->
             </li>
             <li class="list-inline-item">
-              <i class="devicon-ruby-plain"></i> <!-- -wordmark -->
+              <i class="devicons devicons-haskell"></i> <!-- -wordmark -->
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-clojure"></i> <!-- -wordmark -->
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-haskell"></i> <!-- -wordmark -->
+              <i class="devicon-ruby-plain"></i> <!-- -wordmark -->
             </li>
             <!-- TODO: complete -->
           </ul>
