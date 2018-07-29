@@ -60,6 +60,14 @@ module.exports = {
         }
       },
       {
+        test: /\/icons\/.*\.(png|jpe?g|gif|svg|ico|xml|webmanifest)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          limit: 10000,
+          name: utils.assetsPath('icons/[name].[ext]')
+        }
+      },
+      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
